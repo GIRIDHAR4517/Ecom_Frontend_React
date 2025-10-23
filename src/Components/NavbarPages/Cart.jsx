@@ -34,9 +34,9 @@ export const Cart = () => {
   }
 
   return (
-    <div className="min-h-screen bg-gray-900 text-gray-200 p-4 sm:p-8">
+    <div className="min-h-screen bg-gray-900 text-gray-200 p-4  sm:p-8">
       <div className="max-w-6xl mx-auto">
-        <h1 className="text-4xl font-extrabold text-white mb-8 border-b border-gray-700 pb-4">
+        <h1 className="text-4xl font-extrabold text-white mb-8 pt-25 border-b border-gray-700 pb-4">
           Shopping Cart ({cart.length} Items)
         </h1>
 
