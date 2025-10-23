@@ -5,20 +5,20 @@ import React from 'react';
 import Navbar from './Navbar'; 
 import { Outlet } from 'react-router-dom';
 import { UseAuth } from '../../Backend/UseAuth';
+import { Toaster } from 'react-hot-toast';
 
 const Layout = () => {
     return (
     
-        <div className="bg-gray-900 min-h-screen font-sans">
-            <Navbar/>
-           
-            <main className="pt-24 pb-8 px-5 w-[100%] rounded-2xl">
+            <>
+                <Navbar/>
                 <UseAuth>
                     <Outlet/>
+                    <Toaster/>
                     
                 </UseAuth>
-            </main>
-        </div>
+            </>
+       
     );
 };
 

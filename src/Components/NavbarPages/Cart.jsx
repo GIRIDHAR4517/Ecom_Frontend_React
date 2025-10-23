@@ -2,6 +2,7 @@ import React from 'react';
 import { useAuth } from '../../../Backend/UseAuth';
 // Using specific icons for better functionality and look
 import { IoAdd, IoRemove, IoTrashBinOutline } from 'react-icons/io5';
+import toast from 'react-hot-toast';
 
 // Define a type for a cart item for clarity (assuming it has these properties)
 // type CartItem = {
@@ -128,7 +129,7 @@ export const Cart = () => {
 
             <button
               className="w-full mt-6 py-3 bg-teal-600 hover:bg-teal-700 text-white font-bold text-lg rounded-lg transition-colors shadow-lg shadow-teal-500/50"
-              onClick={() => alert('Proceeding to Checkout!')}
+              onClick={() => toast.success("Proceeding to Payment Page")}
             >
               Proceed to Checkout
             </button>

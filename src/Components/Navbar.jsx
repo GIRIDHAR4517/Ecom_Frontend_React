@@ -28,6 +28,9 @@ const Navbar = () => {
                 <NavLink to="/cart" className={getLinkClass}>
                     Cart
                 </NavLink>
+                <NavLink to="/addProduct" className={getLinkClass}>
+                    AddItem
+                </NavLink>
             </ul>
         </nav>
     );

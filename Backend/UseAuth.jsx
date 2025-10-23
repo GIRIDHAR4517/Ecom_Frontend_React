@@ -7,7 +7,7 @@ export function useAuth(){
 }
 export const UseAuth = ({children}) => {
      const [products , setProducts] = useState([]);
-       useEffect(()=>{
+    useEffect(()=>{
        const fetcher= async()=>{
         let res = await axios.get("https://ecom-backend-spring.onrender.com/api/products");
       
@@ -15,11 +15,31 @@ export const UseAuth = ({children}) => {
 
         }
         fetcher();
-    },[])
+    },[products])
 
 
      const [cart, setCart] = useState([]);
-  // In a real app, you would also manage user authentication state here (e.g., const [user, setUser] = useState(null);)
+  
+
+
+  const addToCart = (item) => {
+    setCart((prevCart) => {
+      const existingItem = prevCart.find((cartItem) => cartItem.id === item.id);
+
+      if (existingItem) {
+        // if the item is already in cart → just increase quantity
+        return prevCart.map((cartItem) =>
+          cartItem.id === item.id
+            ? { ...cartItem, quantity: cartItem.quantity + 1 }
+            : cartItem
+        );
+      } else {
+        // if it's a new item → set default quantity = 1
+        return [...prevCart, { ...item, quantity: 1 }];
+      }
+
+  });
+};
 
   // 1. Logic to remove an item completely
   const removeItem = (itemId) => {
@@ -69,7 +89,8 @@ export const UseAuth = ({children}) => {
       setCart,
       removeItem,
       incrementQuantity,
-      decrementQuantity
+      decrementQuantity,
+      addToCart
     }
 
   
