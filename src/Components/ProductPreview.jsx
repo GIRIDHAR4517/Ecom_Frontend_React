@@ -9,7 +9,7 @@ export const ProductPreview = () => {
   const id = useParams();
   useEffect(()=>{
     const getProduct = async()=>{
-      let res = await axios.get(`http://localhost:8080/api/product/${id.id}`)
+      let res = await axios.get(`https://ecom-backend-spring.onrender.com/api/product/${id.id}`)
       setProduct(res.data);
 
     }
@@ -17,7 +17,7 @@ export const ProductPreview = () => {
   },[])
 
   const handleDelete = async()=>{
-    await axios.delete(`http://localhost:8080/api/product/${id.id}`)
+    await axios.delete(`https://ecom-backend-spring.onrender.com/api/product/${id.id}`)
   }
 
   const handleCart =()=>{

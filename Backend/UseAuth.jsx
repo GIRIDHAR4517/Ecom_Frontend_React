@@ -9,7 +9,7 @@ export const UseAuth = ({children}) => {
      const [products , setProducts] = useState([]);
        useEffect(()=>{
        const fetcher= async()=>{
-        let res = await axios.get("http://localhost:8080/api/products");
+        let res = await axios.get("https://ecom-backend-spring.onrender.com/api/products");
       
         setProducts(res.data);
 
